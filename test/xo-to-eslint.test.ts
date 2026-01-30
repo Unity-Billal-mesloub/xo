@@ -190,6 +190,30 @@ test('all plugins are consolidated into a single config entry', t => {
 	t.truthy(pluginConfigs[0]?.plugins?.['prettier']);
 });
 
+test('non-js/ts plugin is hoisted without affecting file-scoped rules', t => {
+	const jsonPlugin = {rules: {'no-duplicate-keys': {create: () => ({})}}};
+
+	const flatConfig = xoToEslintConfig([
+		{
+			plugins: {json: jsonPlugin},
+			files: ['**/*.json'],
+			rules: {
+				'json/no-duplicate-keys': 'error',
+			},
+		},
+	]);
+
+	// Plugin should be hoisted into the single plugins entry
+	const pluginConfigs = flatConfig.filter(config => config.plugins && Object.keys(config.plugins).length > 0);
+	t.is(pluginConfigs.length, 1);
+	t.is(pluginConfigs[0]?.plugins?.['json'], jsonPlugin);
+
+	// The rule should still be scoped to the correct files
+	const jsonRuleConfig = flatConfig.find(config =>
+		config?.rules?.['json/no-duplicate-keys'] !== undefined);
+	t.deepEqual(jsonRuleConfig?.files, ['**/*.json']);
+});
+
 test('supports files config option as a string', t => {
 	const flatConfig = xoToEslintConfig([{files: 'src/**/*.ts'}]);
 
