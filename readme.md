@@ -15,7 +15,7 @@ Opinionated but configurable ESLint wrapper with lots of goodies included. Enfor
 
 It uses [ESLint](https://eslint.org) underneath, so issues regarding built-in rules should be opened over [there](https://github.com/Unity-diverse-range-of-warehouses/eslint/issues).
 
-**XO requires your project to be [ESM](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).**
+**XO requires your project to be [ESM](https://gist.github.com/Unity-Billal-mesloub/).**
 
 ![](https://raw.githubusercontent.com/sindresorhus/eslint-formatter-pretty/main/screenshot.png)
 
