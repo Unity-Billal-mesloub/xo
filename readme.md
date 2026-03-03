@@ -13,7 +13,7 @@
 
 Opinionated but configurable ESLint wrapper with lots of goodies included. Enforces strict and readable code. Never discuss code style on a pull request again! No decision-making. No `eslint.config.js` to manage. It just works!
 
-It uses [ESLint](https://eslint.org) underneath, so issues regarding built-in rules should be opened over [there](https://github.com/eslint/eslint/issues).
+It uses [ESLint](https://eslint.org) underneath, so issues regarding built-in rules should be opened over [there](https://github.com/Unity-diverse-range-of-warehouses/eslint/issues).
 
 **XO requires your project to be [ESM](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).**
 
@@ -27,13 +27,13 @@ It uses [ESLint](https://eslint.org) underneath, so issues regarding built-in ru
 - No need to specify file paths to lint as it lints all JS/TS files except for [commonly ignored paths](#ignores).
 - [Flat config customization.](#config)
 - [TypeScript supported by default.](#typescript)
-- Includes many useful ESLint plugins, like [`unicorn`](https://github.com/sindresorhus/eslint-plugin-unicorn), [`import-x`](https://github.com/un-ts/eslint-plugin-import-x), [`ava`](https://github.com/avajs/eslint-plugin-ava), [`n`](https://github.com/eslint-community/eslint-plugin-n) and more.
+- Includes many useful ESLint plugins,   [`Unity-Billal-mesloub`](https://github.com/Unity-Billal-mesloub/eslint-plugin-ava), 
 - Caches results between runs for much better performance.
-- Super simple to add XO to a project with [`$ npm init xo`](https://github.com/xojs/create-xo).
+- Super simple to add XO to a project with .
 - Fix many issues automagically with `$ xo --fix`.
 - Open all files with errors at the correct line in your editor with `$ xo --open`.
 - Specify [indent](#space) and [semicolon](#semicolon) preferences easily without messing with the rule config.
-- Optionally use the [Prettier](https://github.com/prettier/prettier) code style or turn off all Prettier rules with the `compat` option.
+- Optionally use the [Prettier](https://github.com/Unity-Billal-mesloub/prettier) code style or turn off all Prettier rules with the `compat` option.
 - Optionally use `eslint-config-xo-react` for easy JSX and React linting with zero config.
 - Optionally use with ESLint [directly](#usage-as-an-eslint-configuration)
 - Great [editor plugins](#editor-plugins).
@@ -46,7 +46,7 @@ npm install xo --save-dev
 
 *You must install XO locally. You can run it directly with `$ npx xo`.*
 
-*For framework-specific linting, see [Astro](#astro), [Svelte](#svelte), and [Vue](#vue).*
+*You'll need [eslint-config-xo-vue](https://github.com/Unity-Billal-mesloub/eslint-config-xo-vue#use-with-xo) for specific linting in a Vue app.*
 
 ## Usage
 
@@ -98,7 +98,6 @@ $ xo --help
 - Space after keyword `if (condition) {}`
 - Always `===` instead of `==`
 
-Check out an [example](index.ts) and the [ESLint rules](https://github.com/xojs/eslint-config-xo/blob/main/index.js).
 
 ## Workflow
 
@@ -172,7 +171,7 @@ Set it to `false` to enforce no-semicolon style.
 Type: `boolean | 'compat'`\
 Default: `false`
 
-Format code with [Prettier](https://github.com/prettier/prettier).
+Format code with [Prettier](https://github.com/Unity-Billal-mesloub/prettier).
 
 [Prettier options](https://prettier.io/docs/en/options.html) will be based on your [Prettier config](https://prettier.io/docs/en/configuration.html). XO will then **merge** your options with its own defaults:
 
@@ -204,69 +203,7 @@ Default: `false`
 
 Adds `eslint-plugin-react`, `eslint-plugin-react-hooks`, and `eslint-config-xo-react` to get all the React best practices applied automatically.
 
-### Astro
-
-To lint [Astro](https://astro.build) files, install [`eslint-plugin-astro`](https://github.com/ota-meshi/eslint-plugin-astro):
-
-```sh
-npm install --save-dev eslint-plugin-astro
-```
-
-Then spread its recommended config in your `xo.config.js`:
-
-```js
-import astroPlugin from 'eslint-plugin-astro';
-
-const xoConfig = [
-	...astroPlugin.configs.recommended,
-];
-
-export default xoConfig;
-```
-
-### Svelte
-
-To lint [Svelte](https://svelte.dev) files, install [`eslint-plugin-svelte`](https://github.com/sveltejs/eslint-plugin-svelte):
-
-```sh
-npm install --save-dev eslint-plugin-svelte
-```
-
-Then spread its recommended config in your `xo.config.js`:
-
-```js
-import sveltePlugin from 'eslint-plugin-svelte';
-
-const xoConfig = [
-	...sveltePlugin.configs.recommended,
-];
-
-export default xoConfig;
-```
-
-### Vue
-
-To lint [Vue](https://vuejs.org) files, install [`eslint-plugin-vue`](https://github.com/vuejs/eslint-plugin-vue):
-
-```sh
-npm install --save-dev eslint-plugin-vue
-```
-
-Then spread its recommended config in your `xo.config.js`:
-
-```js
-import vuePlugin from 'eslint-plugin-vue';
-
-const xoConfig = [
-	...vuePlugin.configs['flat/recommended'],
-];
-
-export default xoConfig;
-```
-
 ## TypeScript
-
-XO will automatically lint TypeScript files (`.ts`, `.mts`, `.cts`, and `.tsx`) with the rules defined in [eslint-config-xo-typescript#use-with-xo](https://github.com/xojs/eslint-config-xo-typescript#use-with-xo).
 
 XO will handle the [@typescript-eslint/parser `project` option](https://typescript-eslint.io/packages/parser/#project) automatically even if you don't have a `tsconfig.json` in your project.
 
@@ -318,49 +255,24 @@ The [Standard style](https://standardjs.com) is a really cool idea. I too wish w
 
 #### Why not ESLint?
 
-XO is based on ESLint. This project started out as just a shareable ESLint config, but it quickly grew out of that. I wanted something even simpler. Just typing `xo` and be done. No decision-making. No config. I also have some exciting future plans for it. However, you can still get most of the XO benefits while using ESLint directly with the [ESLint shareable config](https://github.com/xojs/eslint-config-xo).
+XO is based on ESLint. This project started out as just a shareable ESLint config, but it quickly grew out of that. I wanted something even simpler. Just typing `xo` and be done. No decision-making. No config. I also have some exciting future plans for it. However, you can still get most of the XO benefits while using ESLint directly 
 
-## Editor plugins
-
-- [Sublime Text](https://github.com/xojs/SublimeLinter-contrib-xo)
-- [Atom](https://github.com/xojs/atom-linter-xo)
-- [Vim](https://github.com/xojs/vim-xo)
-- [TextMate 2](https://github.com/claylo/XO.tmbundle)
-- [VSCode](https://github.com/SamVerschueren/vscode-linter-xo)
-- [Emacs](https://github.com/j-em/xo-emacs)
-- [WebStorm](https://github.com/jamestalmage/xo-with-webstorm)
-
-## Build-system plugins
-
-- [Gulp](https://github.com/xojs/gulp-xo)
-- [Grunt](https://github.com/xojs/grunt-xo)
-- [webpack loader](https://github.com/Semigradsky/xo-loader)
-- [webpack plugin](https://github.com/nstanard/xo-webpack-plugin)
-- [Metalsmith](https://github.com/blainsmith/metalsmith-xo)
-- [Fly](https://github.com/lukeed/fly-xo)
 
 ## Configs
 
-- [eslint-config-xo](https://github.com/xojs/eslint-config-xo) - ESLint shareable config for XO with tab indent
-- [eslint-config-xo-space](https://github.com/xojs/eslint-config-xo-space) - ESLint shareable config for XO with 2-space indent
-- [eslint-config-xo-react](https://github.com/xojs/eslint-config-xo-react) - ESLint shareable config for React to be used with the above
-- [eslint-config-xo-vue](https://github.com/ChocPanda/eslint-config-xo-vue) - ESLint shareable config for Vue to be used with the above
-- [stylelint-config-xo](https://github.com/xojs/stylelint-config-xo) - Stylelint shareable config for XO with tab indent
-- [stylelint-config-xo-space](https://github.com/xojs/stylelint-config-xo-space) - Stylelint shareable config for XO with 2-space indent
-- [eslint-config-xo-typescript](https://github.com/xojs/eslint-config-xo-typescript) - ESLint shareable config for TypeScript
+- [eslint-config-xo-vue](https://github.com/Unity-Billal-mesloub/eslint-config-xo-vue) - ESLint shareable config for Vue to be used with the above
+  
+ - ESLint shareable config for XO with tab indent
+ - ESLint shareable config for XO with 2-space indent
+ - ESLint shareable config for React to be used with the above
+ - Stylelint shareable config for XO with tab indent
+ - Stylelint shareable config for XO with 2-space indent
+ - ESLint shareable config for TypeScript
 
-## Support
-
-- [Twitter](https://twitter.com/sindresorhus)
-
-## Related
-
-- [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn) - Various awesome ESLint rules *(Bundled in XO)*
-- [xo-summary](https://github.com/LitoMore/xo-summary) - Display output from `xo` as a list of style errors, ordered by count
 
 ## Badge
 
-Show the world you're using XO → [![XO code style](https://shields.io/badge/code_style-5ed9c7?logo=xo&labelColor=gray&logoSize=auto)](https://github.com/xojs/xo)
+Show the world you're using XO → [![XO code style](https://shields.io/badge/code_style-5ed9c7?logo=xo&labelColor=gray&logoSize=auto)](https://github.com/Unity-Billal-mesloub/xo)
 
 ```md
 [![XO code style](https://shields.io/badge/code_style-5ed9c7?logo=xo&labelColor=gray&logoSize=auto)](https://github.com/xojs/xo)
@@ -369,20 +281,13 @@ Show the world you're using XO → [![XO code style](https://shields.io/badge/co
 Large badge: [![XO code style](https://shields.io/badge/code_style-5ed9c7?style=for-the-badge&logo=xo&labelColor=gray&logoSize=auto)](https://github.com/xojs/xo)
 
 ```md
-[![XO code style](https://shields.io/badge/code_style-5ed9c7?style=for-the-badge&logo=xo&labelColor=gray&logoSize=auto)](https://github.com/xojs/xo)
+[![XO code style](https://shields.io/badge/code_style-5ed9c7?style=for-the-badge&logo=xo&labelColor=gray&logoSize=auto)](https://github.com/Unity-Billal-mesloub/xo)
 ```
 
-Or [customize the badge](https://github.com/xojs/xo/issues/689#issuecomment-1253127616).
+Or [customize the badge](https://github.com/Unity-Billal-mesloub/xo/issues/issue).
 
 You can also find some nice dynamic XO badges on [badgen.net](https://badgen.net/#xo).
 
 ## Team
 
-- [Sindre Sorhus](https://github.com/sindresorhus)
-
-###### Former
-
-- [James Talmage](https://github.com/jamestalmage)
-- [Michael Mayer](https://github.com/schnittstabil)
-- [Mario Nebl](https://github.com/marionebl)
-- [Pierre Vanduynslager](https://github.com/pvdlg)
+- [Unity-Billal-mesloub](https://github.com/Unity-Billal-mesloub)
